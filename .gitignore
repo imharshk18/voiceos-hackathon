@@ -1,0 +1,27 @@
+# Secrets and local deployments
+.env
+.env.*
+!.env.example
+
+# JavaScript / Expo build output
+node_modules/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+
+# Native device builds and signing materials
+mobile/ios/
+mobile/android/
+*.mobileprovision
+*.p8
+*.p12
+*.key
+*.pem
+
+# Local machine files
+.DS_Store
+
+# Local AI-assistant configuration
+.agents/
+.claude/

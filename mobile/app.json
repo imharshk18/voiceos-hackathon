@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Mise",
+    "slug": "mise",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "mise",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.harshkadodwala.mise",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Allow Mise to hear your cooking questions.",
+        "NSSpeechRecognitionUsageDescription": "Allow Mise to turn your cooking requests into text."
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.INTERNET",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.WAKE_LOCK",
+        "android.permission.BLUETOOTH"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-notifications",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow Mise to take cooking photos for Chef Mise to inspect.",
+          "photosPermission": "Allow Mise to use cooking photos you choose for Chef Mise to inspect."
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow Mise to hear your cooking questions.",
+          "speechRecognitionPermission": "Allow Mise to turn your cooking requests into text.",
+          "androidSpeechServicePackages": [
+            "com.google.android.googlequicksearchbox"
+          ]
+        }
+      ],
+      "./plugins/withNoPushEntitlement",
+      "@livekit/react-native-expo-plugin",
+      "@config-plugins/react-native-webrtc"
+    ]
+  }
+}
